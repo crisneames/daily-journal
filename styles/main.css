@@ -1,20 +1,5 @@
-#container {
-  background-color: whitesmoke;
-  list-style-type: none;
-  padding: 0;
-  border-radius: 6px;
-}
-
-/* label,
+label,
 textarea,
 select {
   display: flex;
-} */
-
-#entryForm {
-  display: flex;
-}
-
-.item {
-  flex-direction: column;
 }
