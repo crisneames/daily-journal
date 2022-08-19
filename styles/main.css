@@ -1,5 +1,39 @@
+:root {
+  --card-bg-color: #fff;
+  --card-text-color: #070705;
+  --dish-type-color: lightpink;
+  --global-radius: 16px;
+  --card-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.6);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 label,
 textarea,
 select {
   display: flex;
+}
+
+#entries {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 200px;
+  background-color: #f2f2f0;
+  color: #0075a1;
+  margin: 10px;
+  border: 1px solid #0075a1;
+  border-radius: 2%;
+  padding: 10px 20px;
+  box-shadow: var(--card-shadow);
+}
+
+fieldset {
+  background-color: #f2f2f0;
+  color: #0075a1;
 }

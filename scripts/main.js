@@ -51,16 +51,18 @@ const journalEntry = [
   },
 ];
 
-// console.log(journalEntry);
-// console.log(journalEntry[4]);
+const htmlString = '<h3>Previous Entries</h3>';
+document.getElementById('prevEntries').innerHTML = htmlString;
 
-for (entry of journalEntry) {
-  console.log(`Concepts I've learned: ${entry.concept}`);
+let htmlEntries = '';
+for (ent of journalEntry) {
+  htmlEntries =
+    htmlEntries +
+    `<div class='box'>
+    <p>${ent.date}</p>
+    <p>${ent.concept}</p>
+    <p>${ent.entry}</p>
+    <p>${ent.mood}</p>
+    </div>`;
 }
-
-for (entry of journalEntry) {
-  //if id divisable by 2 and remainder not equal 0
-  if (entry.id % 2 !== 0) {
-    console.log(entry);
-  }
-}
+document.getElementById('entries').innerHTML = htmlEntries;
