@@ -1,8 +1,4 @@
 :root {
-  --card-bg-color: #fff;
-  --card-text-color: #070705;
-  --dish-type-color: lightpink;
-  --global-radius: 16px;
   --card-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.6);
 }
 
@@ -14,6 +10,17 @@ label,
 textarea,
 select {
   display: flex;
+}
+
+button {
+  background-color: #f2f2f0;
+  color: #0075a1;
+  border: none;
+  border-radius: 10px;
+  /* box-shadow: 0px 0px 2px 2px rgb(0, 0, 0); */
+  padding: 10px 20px;
+  margin: 10px;
+  box-shadow: var(--card-shadow);
 }
 
 #entries {
@@ -32,8 +39,18 @@ select {
   padding: 10px 20px;
   box-shadow: var(--card-shadow);
 }
+.box:hover {
+  transform: scale(1.05);
+  animation: color-change 2s infinite;
+}
 
 fieldset {
   background-color: #f2f2f0;
   color: #0075a1;
+  border: 1px solid #0075a1;
+  border-radius: 2%;
+  /* box-shadow: 0px 0px 2px 2px rgb(0, 0, 0); */
+  padding: 10px 20px;
+  margin: 10px;
+  box-shadow: var(--card-shadow);
 }
