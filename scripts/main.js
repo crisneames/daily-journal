@@ -59,6 +59,7 @@ document.addEventListener('click', (e) => {
 document.addEventListener('stateChanged', (event) => {
   // One line of code should do it.
   displayEntries();
+  document.forms['myForm'].reset();
 });
 
 // Run the function
