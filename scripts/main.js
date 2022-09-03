@@ -1,7 +1,12 @@
-import { createJournalEntry, getJournalEntries } from './journalEntry.js';
+import {
+  addNewEntry,
+  createJournalEntry,
+  getJournalEntries,
+} from './journalEntry.js';
 
-// display Previous Entries Title
-const htmlString = '<h3>Previous Entries</h3>';
+//**********************************************//
+// display Journal Entries Title
+const htmlString = '<h3>Journal Entries</h3>';
 document.getElementById('prevEntries').innerHTML = htmlString;
 
 // Function to loop through journal entries and displays them
@@ -14,6 +19,7 @@ const displayEntries = () => {
     htmlEntries =
       htmlEntries +
       `<div class='box'>
+      <p>${ent.id}</p>
     <p>${ent.date}</p>
     <p>${ent.concept}</p>
     <p>${ent.entry}</p>
@@ -22,6 +28,39 @@ const displayEntries = () => {
   }
   document.getElementById('entries').innerHTML = htmlEntries;
 };
+
+//*****************************************//
+document.addEventListener('click', (e) => {
+  if (e.target.id === 'recordJournalEntry') {
+    e.preventDefault();
+    console.log('Recording Journal Entry...');
+    // logic to get all values from the form
+
+    // document.querySelector('#searchText').value; // selected by id
+    const date = document.querySelector('input[name=date]')?.value;
+    const concept = document.querySelector('#concepts')?.value;
+    const entry = document.querySelector('#entry')?.value;
+    const mood = document.querySelector('#mood')?.value;
+
+    // format them into an object
+    const newEntry = {
+      id: '',
+      date: date,
+      concept: concept,
+      entry: entry,
+      mood: mood,
+    };
+
+    addNewEntry(newEntry);
+    //console.log('NEW ENTRY', newEntry);
+  }
+});
+
+document.addEventListener('stateChanged', (event) => {
+  // One line of code should do it.
+  displayEntries();
+});
+
 // Run the function
 displayEntries();
 
@@ -50,7 +89,7 @@ for (const ent of entry) {
   if (ent.mood === 'Happy') {
     htmlHappy =
       htmlHappy +
-      `<div class='box'><p>${entry.concept} makes me ${entry.mood}.</p></div>`;
+      `<div class='box'><p>${ent.concept} makes me ${ent.mood}.</p></div>`;
   }
   document.getElementById('list').innerHTML = htmlHappy;
 }

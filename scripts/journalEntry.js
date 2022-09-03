@@ -64,17 +64,19 @@ export const createJournalEntry = (concept, entry, mood) => {
   };
 };
 
-//  ***** Wasn't sure whether this function should reside here in journalEntries.js or main.js -- added it to main.js *****
-// export const concepts = () => {
-//   copyofJournalEntries.map((concept) => {
-//     if (concept.mood === 'happy') {
-//       return `${concept.concept} makes me ${concept.mood}.`;
-//     }
-//   });
-// };
+const getNewEntryId = () => {
+  let highestOrderId = 0;
+  if (journalEntry.length > 0) {
+    highestOrderId = journalEntry.sort((a, b) => b.id - a.id)[0].id;
+  }
+  return highestOrderId + 1;
+};
 
-// **** TODO -- I would have liked to practice array methods -- .sort(), .map(), .find() .slice(), etc
-// which js file would I do this, journalEntry or main?
-// when/where/why would I use .map()? I tried to map over the journalEntry array to pull out concepts 'that make me happy'. It did not
-// work -- I had to use a for loop
-// When/why do you make a copy of an array?
+export const addNewEntry = (entry) => {
+  const newId = getNewEntryId();
+  entry.id = newId;
+  // Need to add logic
+  journalEntry.push(entry);
+  console.log(entry);
+  document.dispatchEvent(new CustomEvent('stateChanged'));
+};
