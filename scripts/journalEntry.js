@@ -76,7 +76,7 @@ export const addNewEntry = (entry) => {
   const newId = getNewEntryId();
   entry.id = newId;
   // Need to add logic
-  journalEntry.push(entry);
-  console.log(entry);
+  journalEntry.unshift(entry);
+  // console.log(entry);
   document.dispatchEvent(new CustomEvent('stateChanged'));
 };
