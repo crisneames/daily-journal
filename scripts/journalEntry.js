@@ -21,6 +21,7 @@ export const journalEntry = () => {
 //   return highestOrderId + 1;
 // };
 
+
 // export const addNewEntry = (entry) => {
 //   const newId = getNewEntryId();
 //   entry.id = newId;
@@ -29,3 +30,13 @@ export const journalEntry = () => {
 //   console.log(entry);
 //   document.dispatchEvent(new CustomEvent('stateChanged'));
 // };
+
+export const addNewEntry = (entry) => {
+  const newId = getNewEntryId();
+  entry.id = newId;
+  // Need to add logic
+  journalEntry.unshift(entry);
+  // console.log(entry);
+  document.dispatchEvent(new CustomEvent('stateChanged'));
+};
+
