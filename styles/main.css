@@ -30,19 +30,19 @@ button {
 }
 
 .box {
-  width: 200px;
+  width: 800px;
   background-color: #f2f2f0;
   color: #0075a1;
-  margin: 10px;
+  margin: 10px auto;
   border: 1px solid #0075a1;
   border-radius: 2%;
   padding: 10px 20px;
   box-shadow: var(--card-shadow);
 }
-.box:hover {
+/* .box:hover {
   transform: scale(1.05);
   animation: color-change 2s infinite;
-}
+} */
 
 fieldset {
   background-color: #f2f2f0;
@@ -53,4 +53,8 @@ fieldset {
   padding: 10px 20px;
   margin: 10px;
   box-shadow: var(--card-shadow);
+}
+
+ul {
+  list-style-type: none;
 }
